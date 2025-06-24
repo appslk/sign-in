@@ -11,7 +11,7 @@ import OutlineButton from "../components/buttons/OutlineButton";
 import jet from "../assets/mediumLogin.gif";
 import classes from "../auth.module.css";
 
-const SignInPage = () => {
+const SignUpPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -26,7 +26,7 @@ const SignInPage = () => {
             classes["image-area"]
           )}
         >
-          <img src={jet} alt="Log in" />
+          <img src={jet} alt="Log In" />
 
           <div className="absolute top-full right-0 left-0 h-[50%] -translate-y-1/2 bg-gradient-to-b from-transparent via-black to-transparent lg:hidden"></div>
           <div className="absolute top-0 bottom-0 left-0 w-[50%] -translate-x-1/2 bg-gradient-to-r from-transparent via-black to-transparent"></div>
@@ -48,9 +48,10 @@ const SignInPage = () => {
         >
           <FormSection>
             <p className="text-center">
-              Please sign in with your wallet to continue.
+              To continue, please sign up with your credentials.
             </p>
 
+            {/* Error and success messages */}
             {/* {error && (
               <div className="rounded bg-red-500/10 p-2 text-center text-[0.8em] text-red-500">
                 {error}
@@ -83,26 +84,30 @@ const SignInPage = () => {
               <hr className="grow border-t-white/30" />
             </div>
 
-            {/* {username && (
-              <div className="mb-4 rounded border border-gray-600 bg-gray-800 p-3">
-                <p className="text-center">
-                  Signed in as: <span className="font-bold">{username}</span>
-                </p>
-              </div>
-            )} */}
+            {/* Username Input */}
+            <div className="mb-4">
+              <label className="mb-2 block text-white">Username</label>
+              <input
+                type="text"
+                // value={username}
+                // onChange={(e) => setUsername(e.target.value)}
+                className="w-full rounded border border-gray-600 bg-gray-800 p-3 text-white"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
 
             <div className="flex flex-col gap-2">
+              {/* Wallet Connection Section */}
               {/* {!walletAddress ? (
-                <div className="space-y-2">
-                  <OutlineButton
-                    type="button"
-                    onClick={connectWallet}
-                    disabled={isConnecting}
-                    className="w-full px-[1em] uppercase"
-                  >
-                    {isConnecting ? "Connecting..." : "Connect Wallet"}
-                  </OutlineButton>
-                </div>
+                <OutlineButton
+                  type="button"
+                  onClick={connectWallet}
+                  disabled={isConnecting}
+                  className="w-full px-[1em] uppercase"
+                >
+                  {isConnecting ? "Connecting..." : "Connect Wallet"}
+                </OutlineButton>
               ) : (
                 <div className="space-y-2">
                   <p className="mx-auto w-fit truncate font-mono text-[0.8em]">
@@ -125,27 +130,30 @@ const SignInPage = () => {
                 Connect Wallet
               </OutlineButton>
 
+              {/* Submit button */}
               <GradientButton
                 type="submit"
-                className="mt-[1em] w-full uppercase"
+                // disabled={!walletAddress || !username || isSubmitting}
                 // className={`mt-[1em] w-full uppercase ${
-                //   !walletAddress || !isRegistered || isSubmitting
+                //   !walletAddress || !username || isSubmitting
                 //     ? "cursor-not-allowed opacity-50"
                 //     : ""
                 // }`}
+                className="mt-[1em] w-full uppercase"
               >
-                {/* {isSubmitting ? "Signing In..." : "Sign In"} */}
-                Sign In
+                {/* {isSubmitting ? "Signing Up..." : "Sign Up"} */}
+                Sign Up
               </GradientButton>
             </div>
 
+            {/* Sign up link */}
             <div className="mt-4 text-center">
-              <span>Don&apos;t have an account?</span>&nbsp;
+              <span>Have an account already?</span>&nbsp;
               <button
-                onClick={() => navigate("/sign-up")}
+                onClick={() => navigate("/sign-in")}
                 className="text-[#5ff48b] hover:opacity-90"
               >
-                Sign Up
+                Sign In
               </button>
             </div>
           </FormSection>
@@ -155,4 +163,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default SignUpPage;
