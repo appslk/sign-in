@@ -1,24 +1,26 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import SignIn from './Pages/Sign-in';
-import SignUp from './Pages/Sign-up';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
+import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
 
 function App() {
+  return (
+    <div>
+      <ul id="bg-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
 
-	return (
-		<div>
-			<BrowserRouter>
-				<Routes>
-
- 					<Route path='/sign-in' element={<SignIn />} />
- 					<Route path='/sign-up' element={<SignUp />} />
-
-				</Routes>
-			</BrowserRouter>
-
-		</div>
-
-	)
+      <BrowserRouter>
+        <Routes>
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
