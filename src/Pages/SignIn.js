@@ -7,6 +7,8 @@ import { cn } from "../lib/utils";
 import FormSection from "../components/auth/FormSection";
 import GradientButton from "../components/buttons/GradientButton";
 import OutlineButton from "../components/buttons/OutlineButton";
+
+import jet from "../assets/mediumLogin.gif";
 import classes from "../auth.module.css";
 
 const SignInPage = () => {
@@ -24,10 +26,7 @@ const SignInPage = () => {
             classes["image-area"]
           )}
         >
-          <img
-            src="https://roboticrabbitsyndicate.com/images/mediumLogin.gif"
-            alt="Rabbit"
-          />
+          <img src={jet} alt="Log in" />
 
           <div className="absolute top-full right-0 left-0 h-[50%] -translate-y-1/2 bg-gradient-to-b from-transparent via-black to-transparent lg:hidden"></div>
           <div className="absolute top-0 bottom-0 left-0 w-[50%] -translate-x-1/2 bg-gradient-to-r from-transparent via-black to-transparent"></div>
@@ -142,9 +141,7 @@ const SignInPage = () => {
 
             <div className="mt-4 text-center">
               <span>Don&apos;t have an account?</span>&nbsp;
-              <span to="/sign-up" className="text-primary hover:opacity-90">
-                Sign Up
-              </span>
+              <span className="text-primary hover:opacity-90">Sign Up</span>
             </div>
           </FormSection>
         </div>

@@ -6,6 +6,13 @@ import SignUp from "./Pages/Sign-up";
 function App() {
   return (
     <div>
+      <ul id="bg-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
       <BrowserRouter>
         <Routes>
           <Route path="/sign-in" element={<SignIn />} />
