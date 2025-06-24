@@ -64,11 +64,11 @@ const SignInPage = () => {
 
             <ul className="flex flex-col items-center space-y-2 px-[1em] text-center">
               <li className="flex items-center gap-2">
-                <span className="gradient-text">✔</span>
+                <span className="text-[#5ff48b]">✔</span>
                 <span>Secure login</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="gradient-text">✔</span>
+                <span className="text-[#5ff48b]">✔</span>
                 <span>Your data stays private</span>
               </li>
             </ul>
@@ -141,7 +141,12 @@ const SignInPage = () => {
 
             <div className="mt-4 text-center">
               <span>Don&apos;t have an account?</span>&nbsp;
-              <span className="text-primary hover:opacity-90">Sign Up</span>
+              <button
+                onClick={() => navigate("/sign-up")}
+                className="text-[#5ff48b] hover:opacity-90"
+              >
+                Sign Up
+              </button>
             </div>
           </FormSection>
         </div>
